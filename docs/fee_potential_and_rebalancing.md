@@ -12,11 +12,13 @@ The concept of fee potential bears a resemblance to *potential energy* in physic
 - **PPM as "Height":** The fee rate (ppm) is analogous to the height in potential energy. A higher fee rate per channel increases the node’s potential earnings, just as increasing an object’s height raises its potential energy.
 
 Thus, a node's fee potential can be conceptualized as the product of the satoshis it holds and the ppm fee it charges, akin to potential energy being the product of mass, height, and gravitational force.
+> if it is for a node, than it is a scalar product over all channels
 
 ### Equation for Fee Potential:
 The fee potential of a node can be simplified as:
 
 Fee Potential = Satoshis × (ppm / 1,000,000)
+> Channel Balance in Satoshis
 
 This equation highlights that the more satoshis a node holds and the higher the ppm fee, the greater the potential earning from routing payments.
 
@@ -43,7 +45,10 @@ In essence, while the initial idea of fee potential suggests that more satoshis 
 
 ## 3. Earning Through Rebalancing: Moving Satoshis to Maximize Relative Fee Potential
 
-Rebalancing in the Lightning Network is a strategy where nodes move their satoshis between different channels to optimize their earning potential. The idea is to shift liquidity from channels with low relative fee potential (where earnings are suboptimal) to channels with higher relative fee potential, where the satoshis can generate more income. By doing this effectively, node operators can increase their overall earnings, provided that the cost of rebalancing is lower than the potential earnings gained from repositioning the liquidity.
+Rebalancing in the Lightning Network is a strategy where nodes move their satoshis between different channels to optimize their earning potential.
+> I think it one kind of rebalancing and not absolute. Not every rebalancer has this strategy. Some rebalancers only want to have inbound in certain channels, ignoring costs (e.g. with boltz swaps)
+
+The idea is to shift liquidity from channels with low relative fee potential (where earnings are suboptimal) to channels with higher relative fee potential, where the satoshis can generate more income. By doing this effectively, node operators can increase their overall earnings, provided that the cost of rebalancing is lower than the potential earnings gained from repositioning the liquidity.
 
 ### How Rebalancing Works
 
@@ -84,5 +89,6 @@ In this case, rebalancing allows you to move liquidity to a more profitable posi
 - **Optimizing Liquidity Distribution:** Rebalancing helps distribute your satoshis across channels more effectively, ensuring that liquidity is where it is most needed and most profitable.
 - **Arbitrage of Fee Potential:** By moving liquidity from low relative fee potential channels to higher ones, you are essentially performing arbitrage, capitalizing on the difference in earning potential across different parts of the network.
 - **Cost-Efficiency:** The key to profitable rebalancing lies in the cost. If you can rebalance for less than the relative fee potential gain, you’re turning a profit.
+> I am seeing rebalancing more as risk return liquidity trade at the moment. There is the risk that the costs were too high and you cannot sell the liquidity for the calculated profits after the rebalancing. Then its not profitable at. This especially important if you move liquidity from channels with a very low earnings potentials
 
 In summary, rebalancing is about strategically shifting liquidity to channels with higher relative fee potential, allowing you to maximize your earnings. It’s not just about having more satoshis in a channel—it’s about ensuring that those satoshis are in the right place, where they can earn the most, while minimizing the costs of moving them.
